@@ -30,6 +30,8 @@ dependencies:
   sqflite: ^2.0.0+3
   intl: ^0.17.0
   conditional_builder: ^1.0.2
+  bloc:
+  flutter_bloc:
 
 
 dev_dependencies:
