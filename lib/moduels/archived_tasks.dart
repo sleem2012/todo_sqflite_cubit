@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_app/shared/components.dart';
+import 'package:todo_app/shared/cubit/cubit.dart';
+import 'package:todo_app/shared/cubit/states.dart';
 
 class ArchivedTasks extends StatefulWidget {
   @override
@@ -8,10 +12,12 @@ class ArchivedTasks extends StatefulWidget {
 class _ArchivedTasksState extends State<ArchivedTasks> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        child: Text("Archived Tasks "),
-      ),
+    return BlocConsumer<AppCubit, AppStates>(
+      listener: (BuildContext context, state) {},
+      builder: (BuildContext context, state) {
+        var tasks = AppCubit.get(context).archiveTasks;
+        return tasksBuilder(tasks: tasks);
+      },
     );
   }
 }
